@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 const NaverLoginButton = () => {
   const NaverClientId = 'vwTn9B_7NMCCeNpv4BxU';
 
-  const socket = io('http://192.168.55.20:3001');
+  const socket = io('http://192.168.0.19:3001');
 
   // 1. 로그인 성공 후의 동작
   const responseNaver = (response) => {
