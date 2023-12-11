@@ -39,3 +39,28 @@ html, body {
     transform: rotate(360deg);
   }
 }
+
+.RankView {
+  text-align: center;
+  margin-top: 10vh;
+  color:blueviolet;
+}
+
+.rank-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.rank-table td {
+  padding: 10px;
+  border-bottom: 3px solid #ddd; /* 각 행의 하단에 선을 추가합니다 */
+}
+
+.rank-table td.output-content {
+  border-left: 4px solid #ddd; /* 두 번째 열의 왼쪽에 선을 추가합니다 */
+}
+
+.userNameIntroduce {
+  margin-top: 20px;
+}
