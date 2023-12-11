@@ -2,10 +2,12 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%; /* 전체 높이 설정 */
+  text-align: center;
 }
 
 .App {
   text-align: center;
+  margin-top: -10vh;
 }
 
 .App-logo {

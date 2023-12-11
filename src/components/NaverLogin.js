@@ -6,32 +6,43 @@ import '../styles/NaverLogin.css';
 import { io } from 'socket.io-client';
 
 const NaverLoginButton = () => {
+  const socket = io('http://192.168.55.55:3001');
   const NaverClientId = 'vwTn9B_7NMCCeNpv4BxU';
-
-  const socket = io('http://192.168.55.130:3001');
 
   // 1. 로그인 성공 후의 동작
   const responseNaver = (response) => {
     var result = response;
-    // alert("로그인 완료, 이제 기존 가입 회원인지 확인한다.");
+    console.log("네이버 로그인 완료, 이제 기존 가입 회원인지 확인한다.");
     console.log(result);
-    socket.emit('naverLogin', result);
+    socket.emit('naverLogin', result); // result 값 보내기 
     console.log("다시 리액트로 돌아옴.");
 
-    socket.on('message', (data) => {
-      console.log("불러온 값 : ", data);
-    })
-  };
+    socket.on('userRegister', (userId, isUserExist) => {
+      console.log("불러온 값 : ", userId, isUserExist); // 성공적으로 수행...
 
+      if(isUserExist === 1){ // 존재하는 아이디라면,,,
+        sessionStorage.setItem('userId', userId);
+        console.log("Session Storage에 저장된 아이디 : ", userId);
+
+        window.location.href='/getLogin';
+      } else{
+        console.log("사용자가 존재하지 않음, 이메일 인증 페이지로 이동");
+      }
+    });
+  };
   const error = (error) => {
     console.log(error);
   }
 
   return (
     <div className='centered'>
+      <div className="App">
+        <header className="App-header">
+          MELODY GAME
+        </header>
       <NaverLogin
         clientId={NaverClientId}
-        callbackUrl="http://localhost:3000/LoginSuccess"
+        callbackUrl="http://localhost:3000/"
         render={(props) => (
           <button className='naver-login-button' onClick={props.onClick}>
             네이버로 로그인
@@ -40,6 +51,7 @@ const NaverLoginButton = () => {
         onSuccess={responseNaver}
         onFailure={error}
       />
+      </div>
     </div>
   );
 };
