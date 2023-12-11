@@ -1,0 +1,36 @@
+/* styles/Login.css */
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.login-buttons {
+  margin-top: 20px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 네이버 로그인 버튼 스타일 */
+.naver-login-button {
+  background-color: #1ec800;
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 31px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 12vh;
+}
+
+.naver-login-button:hover {
+  background-color: #0d9500;
+}
