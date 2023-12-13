@@ -107,10 +107,20 @@ export const DataProvider = ({ children }) => {
         console.log("userMarks and userId : ", userMarks, userId, userName);
         alert("잠시만 기다려주세요...");
         socket.emit('userMarks', { userMarks, userId, userName });
+
         socket.on('userMarks', isUserIn3rd => {
           if (isUserIn3rd <= 3) {
-            alert(userName+"님, "+isUserIn3rd+"등을 축하합니다. 기념사진 촬영하겠습니다!!");
-            window.location.href = '/takePicture';
+            var confirmMessage = userName+"님, "+isUserIn3rd+"등을 축하합니다. 기념사진 촬영하겠습니다!!";
+            
+            if(window.confirm(confirmMessage)) {
+              localStorage.setItem("userId", userId);
+              localStorage.setItem("userName", userName);
+              window.location.href = '/takePicture';
+            }
+            else{
+              window.location.href = '/getLogin';
+            }
+           
           } else {
             window.location.href = '/getLogin';
           }
