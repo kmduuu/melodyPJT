@@ -9,7 +9,6 @@ const GetLogin = () => {
   const [userName, setUserName] = useState('');
   const { startQuiz, showStart } = useContext(DataContext);
   const [userRankings, setUserRankings] = useState([]);
-
   // console.log("가져온 userId 값: ", userId);
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const GetLogin = () => {
     socket.emit('requestRankings');
     socket.on('rankingData', (userRankings) => {
       console.log("가져온 랭킹 : ", userRankings);
-      console.log("212222222222222222222222222222")
       setUserRankings(userRankings);
     });
 
@@ -60,9 +58,9 @@ const GetLogin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {userRankings.map((ranking) => (
-                    <tr key={ranking.user_rank}>
-                      <td>{ranking.user_rank} 등</td>
+                  {userRankings.map((ranking, index) => (
+                    <tr key={index + 1}>
+                      <td>{index+1} 등</td>
                       <td className='output-content'>{ranking.user_name}</td>
                       <td className='output-content'>{ranking.user_score}</td>
                     </tr>

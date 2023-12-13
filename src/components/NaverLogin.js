@@ -17,16 +17,26 @@ const NaverLoginButton = () => {
     socket.emit('naverLogin', result); // result 값 보내기 
     console.log("다시 리액트로 돌아옴.");
 
-    socket.on('userRegister', (userId, isUserExist) => {
+    socket.on('userRegister', (userId, userName, userEmail, isUserExist) => {
       console.log("불러온 값 : ", userId, isUserExist); // 성공적으로 수행...
 
-      if(isUserExist === 1){ // 존재하는 아이디라면,,,
+      if(isUserExist === 1){ // 존재하는 아이디라면...
+
         sessionStorage.setItem('userId', userId);
         console.log("Session Storage에 저장된 아이디 : ", userId);
-
         window.location.href='/getLogin';
+
       } else{
         console.log("사용자가 존재하지 않음, 이메일 인증 페이지로 이동");
+        // 값 저장
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('userEmail', userEmail);
+
+        console.log('userId, userName, userEmail', userId, userName, userEmail);
+        // 페이지 이동
+        alert("처음 가입하시면 이메일 인증이 필요합니다.")
+        window.location.href = '/signUp';
       }
     });
   };

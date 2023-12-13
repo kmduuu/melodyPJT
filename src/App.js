@@ -6,6 +6,7 @@ import NaverLoginButton from './components/NaverLogin';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import { DataProvider } from './context/dataContext';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<NaverLoginButton />} />
           <Route path="/getLogin" element={<GetLogin />} />
+          <Route path="/signUp" element={<SignUp />}/>
           {/* 기타 경로 */}
         </Routes>
     </Router>
