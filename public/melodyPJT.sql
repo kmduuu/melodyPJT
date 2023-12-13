@@ -44,7 +44,7 @@ ADD FOREIGN KEY (user_id) REFERENCES user(user_id);
 ALTER TABLE user_ranking
 ADD COLUMN user_picture VARCHAR(50);
 
-drop table user_ranking;
+-- drop table user_ranking;
 
 CREATE TABLE user_ranking (
   user_rank INT NOT NULL,
@@ -62,7 +62,7 @@ ALTER table user_ranking drop column user_rank;
 
 select * from user_ranking order by user_score DESC;
 
-DELETE FROM user_ranking WHERE user_id = 'l6suZ01TkXiTrDnu_V85CiF2nhKJZgOemWxxmUfwr44';
+DELETE FROM user_ranking WHERE user_id = 'SJgoulEOljR46CBVbzHCtwPfUJ3QerajBkGMZ-_1NHM';
 
 -- 특정 사용자의 user_score을 내림차순으로 정렬하여 순위 확인
 SELECT user_id, user_rank
@@ -70,4 +70,4 @@ FROM (
   SELECT user_id, RANK() OVER (ORDER BY user_score DESC) as user_rank
   FROM user_ranking
 ) ranked_users
-WHERE user_id = 'l6suZ01TkXiTrDnu_V85CiF2nhKJZgOemWxxmUfwr44';
+WHERE user_id = 'SJgoulEOljR46CBVbzHCtwPfUJ3QerajBkGMZ-_1NHM';

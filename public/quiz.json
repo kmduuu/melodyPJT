@@ -3,17 +3,17 @@
         "id": "01",
         "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "뽀로로",
-            "위송빠레",
-            "토토로",
-            "One summers"
+            "그대에게",
+            "바보처럼",
+            "세월이 가면",
+            "미니 스커트"
         ],
-        "audio": "./music/One Summers.mp3",
-        "answer": "One summers"
+        "audio":"./music/세월이 가면.mp3",
+        "answer": "세월이 가면"
     },
     {
         "id": "02",
-        "question" : "멜로디의 노래 제목을 맞추시오-2.",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
             "위하여",
             "베토벤 바이러스",
@@ -25,90 +25,98 @@
     },
     {
         "id": "03",
-        "question" : "Which of the following is not a disadvantage of React.js?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "React.js has only a view layer. We have put your code for Ajax requests, events and so on.",
-            "The library of React.js is pretty large.",
-            "The JSX in React.js makes code easy to read and write.",
-            "The learning curve can be steep in React.js."
+            "All you need is love",
+            "Love me tender",
+            "Jailhouse Rock",
+            "I want to hold your hand"
         ],
-        "answer": "The JSX in React.js makes code easy to read and write."
+        "audio":"./music/I want to hold your hand.mp3",
+        "answer": "I want to hold your hand"
     },
     {
         "id": "04",
-        "question" : "Which of the following command is used to install create-react-app?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "npm install -g create-react-app",
-            "npx create-react-app my-app",
-            "npm install create-react-app",
-            "npm install -f create-react-app"
+            "빨간 마후라",
+            "새마을 노래",
+            "애국가",
+            "해군가"
         ],
-        "answer": "npx create-react-app my-app"
+        "audio": "./music/새마을노래.mp3",
+        "answer": "새마을 노래"
     },
     {
         "id": "05",
-        "question" : "What of the following is used in React.js to increase performance?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "Original DOM",
-            "Virtual DOM",
-            "Both A and B.",
-            "None of the above."
+            "당신은...",
+            "긴기라기니",
+            "희망사항",
+            "맨발의 계절"
         ],
-        "answer": "Virtual DOM"
+        "audio":"./music/긴기라기니.mp3",
+        "answer": "긴기라기니"
     },
     {
         "id": "06",
-        "question" : "What is the default port where webpack-server runs?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "3000",
-            "8080",
-            "3030",
-            "6060"
+            "공군가",
+            "육군가",
+            "해군가",
+            "1대대가"
         ],
-        "answer": "3000"
+        "audio":"./music/공군가.mp3",
+        "answer": "공군가"
     },
     {
         "id": "07",
-        "question" : "How many numbers of elements a valid react component can return?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "1",
-            "2",
-            "3",
-            "Unlimited"
+            "Keep your head down",
+            "Still.dre",
+            "Fortunate son",
+            "Shape of my hear"
         ],
-        "answer": "1"
+        "audio":"./music/Fortunate son.mp3",
+        "answer": "Fortunate son"
     },
     {
         "id": "08",
-        "question" : "What is the declarative way to render a dynamic list of components based on values in an array?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "Using the reduce array method",
-            "Using the <Each /> component",
-            "Using the Array.map() method",
-            "With a for/while loop"
+            "붉은 노을",
+            "사랑하기 때문에",
+            "내 마음에 비친 내 모습",
+            "깊은 밤을 날아서"
         ],
-        "answer": "Using the Array.map() method"
+        "audio":"./music/내 마음에 비친 내 모습.mp3",
+        "answer": "내 마음에 비친 내 모습"
     },
     {
         "id": "09",
-        "question" : "What is a state in React?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "A permanent storage.",
-            "Internal storage of the component.",
-            "External storage of the component.",
-            "None of the above."
+            "마법의 성",
+            "위하여",
+            "새삥",
+            "천둥벌거숭이"
         ],
-        "answer": "Internal storage of the component."
+        "audio":"./music/천둥벌거숭이.mp3",
+        "answer": "천둥벌거숭이"
     },
     {
         "id": "10",
-        "question" : "What are the two ways to handle data in React?",
+        "question" : "멜로디의 노래 제목을 맞추시오.",
         "options": [
-            "State & Props",
-            "Services & Components",
-            "State & Services",
-            "State & Component"
+            "아름다운 사람",
+            "상록수",
+            "친구",
+            "가을 편지"
         ],
-        "answer": "State & Props"
+        "audio": "./music/아름다운 사람.mp3",
+        "answer": "아름다운 사람"
     }
 ]

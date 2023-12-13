@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import { useNavigate } from 'react-router-dom';
 
 const TakePicture = () => {
   const [userId, setUserId] = useState("yourUserId");
   const [userName, setUserName] = useState("yourUserName");
   const socket = io('http://192.168.0.19:3001');
-  const navigate = useNavigate();
 
   // 컴포넌트가 처음 렌더링될 때 localStorage에서 값을 가져와 설정
   useEffect(() => {

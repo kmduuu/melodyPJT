@@ -2,6 +2,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import DataContext from '../context/dataContext';
 import { io } from 'socket.io-client';
+import axios from 'axios';
 import '../App.css';
 
 const GetLogin = () => {
@@ -10,6 +11,40 @@ const GetLogin = () => {
   const { startQuiz, showStart } = useContext(DataContext);
   const [userRankings, setUserRankings] = useState([]);
   // console.log("가져온 userId 값: ", userId);
+
+  const withDraw = async () => {
+    // 네이버 로그인 API 토큰 폐기 엔드포인트 URL
+    const revokeUrl = 'https://nid.naver.com/oauth2.0/token';
+
+    // 네이버 개발자 애플리케이션 정보
+    const clientId = 'vwTn9B_7NMCCeNpv4BxU';
+    const clientSecret = 'nPmJeh9jPb';
+
+    // 사용자의 토큰 값
+    const accessToken = '사용자_ACCESS_TOKEN';
+
+    try {
+      // 토큰 폐기 요청
+      const response = await axios.get(revokeUrl, {
+        params: {
+          grant_type: 'delete',
+          client_id: clientId,
+          client_secret: clientSecret,
+          access_token: accessToken,
+        },
+      });
+
+      // 응답 확인
+      if (response.status === 200) {
+        console.log('네이버 로그인 API 토큰 폐기 성공');
+        // 여기에 토큰이 성공적으로 폐기되었을 때 수행할 작업을 추가할 수 있습니다.
+      } else {
+        console.log('네이버 로그인 API 토큰 폐기 실패');
+      }
+    } catch (error) {
+      console.error('네이버 로그인 API 토큰 폐기 중 오류 발생:', error.message);
+    }
+  };
 
   useEffect(() => {
     const socket = io('http://192.168.0.19:3001');
@@ -42,6 +77,7 @@ const GetLogin = () => {
         <h2 className='userNameIntroduce'>{userName}님, 환영합니다.</h2>
         {/* 추가 컨텐츠 */}
       </div>
+      {/*<button onClick={withDraw}>탈퇴하기</button>*/}
       <div className="container">
         <div className="row vh-100 align-items-center justify-content-center">
           <div className="col-lg-8">
