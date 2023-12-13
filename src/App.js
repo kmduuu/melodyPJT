@@ -7,6 +7,7 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import { DataProvider } from './context/dataContext';
 import SignUp from './components/SignUp';
+import TakePicture from './components/TakePicture';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<NaverLoginButton />} />
           <Route path="/getLogin" element={<GetLogin />} />
           <Route path="/signUp" element={<SignUp />}/>
+          <Route path="/takePicture" element={<TakePicture />}/>
           {/* 기타 경로 */}
         </Routes>
     </Router>

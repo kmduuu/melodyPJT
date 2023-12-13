@@ -52,7 +52,7 @@ const NaverLoginButton = () => {
         </header>
       <NaverLogin
         clientId={NaverClientId}
-        callbackUrl="http://localhost:3000/"
+        callbackUrl="http://192.168.0.57:3000/"
         render={(props) => (
           <button className='naver-login-button' onClick={props.onClick}>
             네이버로 로그인

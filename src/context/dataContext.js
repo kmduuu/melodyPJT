@@ -83,6 +83,7 @@ export const DataProvider = ({ children }) => {
 
   // Start Over
   const startOver = () => {
+    alert("눌렀을껀데 분명히...")
     const userMarks = marks;
     console.log("현재 점수 : ", marks);
     var userId = sessionStorage.getItem('userId');
@@ -93,20 +94,30 @@ export const DataProvider = ({ children }) => {
     setSelectedAnswer('');
     setQuestionIndex(0);
     setMarks(0);
+
     const wrongBtn = document.querySelector('button.bg-danger');
     wrongBtn?.classList.remove('bg-danger');
     const rightBtn = document.querySelector('button.bg-success');
     rightBtn?.classList.remove('bg-success');
-    // 위치 전환하기
 
     if (userId) {
       socket.emit('whatIsUserName', userId);
       socket.on('gotUserName', (userName) => {
         // alert('received UserName : ', userName);
         console.log("userMarks and userId : ", userMarks, userId, userName);
+        alert("잠시만 기다려주세요...");
         socket.emit('userMarks', { userMarks, userId, userName });
+        socket.on('userMarks', isUserIn3rd => {
+          if (isUserIn3rd <= 3) {
+            alert(userName+"님, "+isUserIn3rd+"등을 축하합니다. 기념사진 촬영하겠습니다!!");
+            window.location.href = '/takePicture';
+          } else {
+            window.location.href = '/getLogin';
+          }
+        });
       });
     }
+
   }
   return (
     <DataContext.Provider value={{
